@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-title>Agregar nueva bicicleta</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="close()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="bikeForm" (ngSubmit)="save()">
+
+    <ion-list no-lines>
+
+      <ion-item>
+        <ion-label floating>Nombre</ion-label>
+        <ion-input required="required" formControlName="nombre" name="Nombre" type="text" placeholder="Nombre"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Modelo</ion-label>
+        <ion-select required="required" formControlName="modelo" name="Modelo">
+        	<ion-select-option *ngFor="let itm of ModelosLst" value={{itm}}>{{itm}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Color</ion-label>
+        <ion-select required="required" formControlName="color" name="Color">
+        	<ion-select-option *ngFor="let itm of ColoresLst" value={{itm}}>{{itm}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Rodado</ion-label>
+        <ion-select required="required" formControlName="rodado" name="Rodado">
+        	<ion-select-option *ngFor="let itm of RodadosLst" value={{itm}}>{{itm}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Precio</ion-label>
+        <ion-input required="required" formControlName="precio" name="Precio" type="number" placeholder="Precio" min="0"></ion-input>
+      </ion-item>
+
+    </ion-list>
+
+    <ion-button type="submit" color="primary" [disabled]="!bikeForm.valid">
+      <ion-icon slot="start" name="save"></ion-icon>
+      Guardar
+    </ion-button>
+
+  </form>
+</ion-content>

@@ -1,6 +1,8 @@
 {
   "name": "biciApp",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular",
   "id": "bdf59668"
 }

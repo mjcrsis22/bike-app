@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-title>Ver bicicleta</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="close()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Precio: {{viewBike.precio}}</ion-card-subtitle>
+      <ion-card-title><strong>{{viewBike.nombre}}</strong></ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <h2>Modelo: {{viewBike.modelo}}</h2>
+      <h2>Color: {{viewBike.color}}</h2>
+      <h2>Rodado: {{viewBike.rodado}}</h2>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
